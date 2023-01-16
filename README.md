@@ -19,7 +19,8 @@
   <ol>  Filter and sort items for better viewing  </ol>
 </ol>
   
-
+Learning resources:
+https://www.youtube.com/watch?v=WytIfUWHtV4&list=PLFyAEmibWSQCp__jQM2kVhbzRu5QDoHCy
 
 
 
