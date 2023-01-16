@@ -16,7 +16,6 @@ def login():
         remember = request.form.get("remember")
         if user:
             if check_password_hash(user.password, password):
-                #session.permanent = True 
                 login_user(user, remember=(str(remember) == "checked"))  
                 flash(f"Welcome back, {user.user_name}!", category="success")
                 return redirect(url_for("views.home"))
