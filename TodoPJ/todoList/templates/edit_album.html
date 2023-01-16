@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block content %}
+
+<form id="todo-form" method="POST">
+  <!-- Add information todo, date, time -->
+  <div>
+    <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+      <i class="fas fa-check-square me-1"></i>
+      <u>My Todo-s</u>
+    </p>
+  </div>
+  <div class="row">
+    <div id="inputform"class="col-12 col-md-4 col-lg-4 border p-4">
+        <div>
+                <input id="titleInput" name="titleInput" placeholder="Enter todo" class="form-control" value="{{prev.data}}"  required><br>
+                <div class="d-flex">
+                    <input id="datetimeInput" name="datetimeInput" type="datetime-local" class="form-control" value="{{prev.duedate}}"><br>
+                    <!--<input id="timeInput" name="timeInput" type="time" class="form-control"> -->
+                    
+                </div>
+                <br>
+                <div id="buttons" class="text-center">
+                    <button id="update" name="action" type="submit" class="mx-auto btn btn-primary" value="update" > Update </button>
+                    <button id="cancel" name="action" type="submit" class="btn btn-primary mb1 bg-orange" value="cancel" > Cancel </button>
+                </div>
+                
+
+        </div>
+    </div>
+
+    
+</form>
+<div class="col-12 col-md-8 col-lg-8 border rounded p-4" id="notes">     
+        
+    
+    <!-- Todo List -->
+    {% for note in user.notes %}
+    <ul class="list-group list-group-horizontal my-3 rounded-0  bg-transparent">
+          <li
+          class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+          <div class="form-check">
+              <button id="state_{{note.id}}" onclick="checkedstate({{note.id}})" class="status_{{note.status}}"> {{note.status}} </button>
+              
+          </div>
+          </li>
+          <li
+          class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+          <p id="title_{{note.id}}" class="lead fw-normal mb-0"> {{note.data}} </p>
+          </li>
+          <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+          <div class="d-flex flex-row justify-content-end mb-1">
+              <a href="{{url_for('views.edit', id=note.id)}}"><i style="cursor:pointer;" title="Edit todo" class="text-info fas fa-pencil-alt me-3"></i> </a>
+              <i style="cursor:pointer;" title="Delete todo" onclick="deleteNote({{note.id}})"  class="text-danger fas fa-trash-alt" ></i>
+          </div>
+          <div class="text-end text-muted">
+              <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+              <p class="small mb-0"> {{note.duedate}} </p>
+              <small class="text-muted">  </small>
+              </a>
+          </div>
+          </li>
+    </ul>
+    {% endfor %}
+  </div>
+  
+      
+  {% endblock %}
