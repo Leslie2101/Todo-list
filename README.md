@@ -15,7 +15,7 @@
 <ol> <h4> Todolist: </h4>
   <ol> Adding (with default status "Incomplete") </ol>
   <ol> Change status of todo-item </ol>
-  <ol> Update, delete todo-item </ol>
+  <ol> Edit, delete todo-item </ol>
   <ol>  Filter and sort items for better viewing  </ol>
 </ol>
   
