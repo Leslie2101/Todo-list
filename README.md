@@ -3,7 +3,6 @@
 
 <h2> Description </h2>
 <ul> A beginner project using MySQL and Flask. Users are able to login their personal todolist and manage their todo-items </ul>
-<ul> <i> Flask and MySQL are used due to author's interest. </i> </ul>
   
 
 <h2> Features </h2>
