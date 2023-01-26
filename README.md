@@ -2,7 +2,7 @@
 <img width="922" alt="image" src="https://user-images.githubusercontent.com/109104110/212666231-f154e26f-9222-4fac-a39d-42c1e7e489f8.png">
 
 <h2> Description </h2>
-<ul> A beginner project using MySQL and Flask </ul>
+<ul> A beginner project using MySQL and Flask. Users are able to login their personal todolist and manage their todo-items </ul>
 <ul> <i> Flask and MySQL are used due to author's interest. </i> </ul>
   
 
